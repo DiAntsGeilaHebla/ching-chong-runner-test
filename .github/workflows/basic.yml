@@ -1,18 +1,13 @@
-name: Test Basic Workflow
+name: Test Self-Hosted Runner
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  check-bats-version:
-    runs-on:
-      group: ubuntu-runners
-      labels: ubuntu-20.04-16core
-
+  test-run:
+    runs-on: [self-hosted, linux, x64]  # Passe an, falls du eigene Labels vergeben hast
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run uname
-        run: uname -a
+      - name: Check runner
+        run: echo "Hello from self-hosted runner!"
