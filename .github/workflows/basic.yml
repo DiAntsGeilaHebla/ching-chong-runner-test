@@ -6,8 +6,9 @@ on:
       - main
 
 jobs:
-  test-run:
-    runs-on: [self-hosted, linux, x64]  # Passe an, falls du eigene Labels vergeben hast
+  example:
+    runs-on: self-hosted
     steps:
-      - name: Check runner
+      - name: Test step
         run: echo "Hello from self-hosted runner!"
+
