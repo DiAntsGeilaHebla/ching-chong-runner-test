@@ -1,0 +1,18 @@
+name: Test Basic Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  check-bats-version:
+    runs-on:
+      group: ubuntu-runners
+      labels: ubuntu-20.04-16core
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run uname
+        run: uname -a
